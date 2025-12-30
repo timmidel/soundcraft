@@ -27,7 +27,8 @@ const Home = () => {
 
     try {
       const response = await fetch(
-        "https://meowy.app.n8n.cloud/webhook-test/920eece5-ed91-45e4-b16c-a8603d4ac80e",
+        process.env.N8N_URL ||
+          "https://meowy.app.n8n.cloud/webhook-test/920eece5-ed91-45e4-b16c-a8603d4ac80e",
         {
           method: "POST",
           headers: {
