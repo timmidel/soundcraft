@@ -4,6 +4,9 @@ import { Music, Sliders, User, Sparkles, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const Home = () => {
+  const N8N_URL =
+    process.env.NEXT_PUBLIC_N8N_URL ||
+    "https://meowy.app.n8n.cloud/webhook/920eece5-ed91-45e4-b16c-a8603d4ac80e";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -26,17 +29,13 @@ const Home = () => {
     setSubmitStatus("sending");
 
     try {
-      const response = await fetch(
-        process.env.N8N_URL ||
-          "https://meowy.app.n8n.cloud/webhook-test/920eece5-ed91-45e4-b16c-a8603d4ac80e",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(N8N_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (response.ok) {
         setSubmitStatus("success");
