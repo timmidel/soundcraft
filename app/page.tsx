@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Music, Sliders, User, Sparkles, Menu, X } from "lucide-react";
 import Image from "next/image";
+import { MotionDiv } from "./components/motion";
 
 const Home = () => {
   const N8N_URL =
@@ -156,7 +157,7 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section
+      <MotionDiv
         id="hero"
         className="min-h-screen flex items-center justify-center px-6 pt-20"
       >
@@ -203,10 +204,10 @@ const Home = () => {
             </svg>
           </div>
         </div>
-      </section>
+      </MotionDiv>
 
       {/* Services Section */}
-      <section id="services" className="py-24 px-6 bg-zinc-900">
+      <MotionDiv id="services" className="py-24 px-6 bg-zinc-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">What We Do</h2>
@@ -228,10 +229,10 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </MotionDiv>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-zinc-950">
+      <MotionDiv id="contact" className="py-24 px-6 bg-zinc-950">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -323,7 +324,7 @@ const Home = () => {
             )}
           </div>
         </div>
-      </section>
+      </MotionDiv>
 
       {/* Footer */}
       <footer className="bg-zinc-900 border-t border-zinc-800 py-8 px-6">
